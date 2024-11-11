@@ -1,0 +1,7 @@
+undefined - a data type - variable value is not initialized
+null - special keyword - nothing/ null value.
+
+symbal vs object
+Immutable but object is mutable
+
+unique instance but object where duplicate value are allow but duplicate keys are not allow.
