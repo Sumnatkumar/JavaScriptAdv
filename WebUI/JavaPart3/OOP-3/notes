@@ -1,0 +1,6 @@
+what is contructor?
+
+a)contructor - specail method, to initlize object values.
+b)contructor method will invoke automatically at time of object creation.
+c)contructor method - invoke only once.
+d)contructor method we can't invoke explicitly
