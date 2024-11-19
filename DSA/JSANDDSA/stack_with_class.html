@@ -19,13 +19,17 @@
                     alert("stack is full");
                 } else {
                     this.item[this.currentSize] = newVal;
+                    this.currentSize++;
                 }
             }
             pop() {}
-            display() {}
+            display() {
+                console.warm(this.item);
+            }
         }
-        st1 = new Stack(5)
-        str1.push(20);
+        st1 = new Stack(5);
+        /* st1.push(20);
+        st1.display();*/
     </script>
 </head>
 

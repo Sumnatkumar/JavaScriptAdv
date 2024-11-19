@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Game</title>
+    <style>
+        .playground {
+            position: relative;
+            background-color: green;
+            height: 550px;
+            width: 550px;
+            float: left;
+        }
+        
+        .mosquito {
+            position: relative;
+            height: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="playground">
+        <img class="mosquito" id="mosquito" onclick="hiMosquito()" src="Mosquito.jpg" alt="">
+    </div>
+    <div class="controls">
+        <h2 id="gameStats"></h2>
+        <h3>
+            <span>Total</span>
+            <span id="totalHit"></span>
+        </h3>
+        <button onclick="startGame()">Start Game</button>
+    </div>
+    <script>
+        let hitCount = 0;
+        let isGameStart = false;
+
+        function startGame() {
+            document.getElementById('gameStats').innerText = "Game Started";
+            hitCount = 0;
+            isGameStart = true;
+            let mosquito = document.getElementById('mosquito');
+            let time = setInterval(() => {
+                let i = Math.floor(Math.random() * 500) + 1;
+                let j = Math.floor(Math.random() * 500) + 1;
+                mosquito.style.left = i + "px";
+                mosquito.style.top = j + "px";
+            }, 2000)
+            setTimeout(() => {
+                clearTimeout(time);
+                isGameStart = false;
+                document.getElementById('gameStats').innerText = "Game Over";
+            }, 30000)
+        }
+
+        function hiMosquito() {
+            if (isGameStart) {
+                hitCount++;
+                document.getElementById('totalHit').innerText = hitCount;
+            }
+        }
+    </script>
+</body>
+
+</html>
